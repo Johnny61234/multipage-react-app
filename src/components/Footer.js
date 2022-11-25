@@ -1,33 +1,33 @@
 import { Link } from 'react-router-dom';
 import GetInTouch from './GetInTouch';
+import logo from '../assets/logos/logo-light.webp';
+import styled from 'styled-components';
 
 function Footer() {
     return ( 
-        <div>
+        <>
             <GetInTouch />
-            <div className="footer_wrapper">
-                <div className="upper">
-                    <div className="logo_wrapper">
-                        <img/>
+            <Wrapper>
+                <div className='upper'>
+                    <div className="logo__container">
+                        <img className='logo' src={logo}/>
                     </div>
-                    <div>
-                        <ul>
-                            <li><Link to='/ourcompany'>Our Company</Link></li>
-                            <li><Link to='/locations'>Locations</Link></li>
-                            <li><Link to='/contact'>Contact</Link></li>
-                        </ul>
-                    </div>
+                    <ul className='list'>
+                        <li className='list__item'><Link to='/ourcompany'>Our Company</Link></li>
+                        <li className='list__item'><Link to='/locations'>Locations</Link></li>
+                        <li className='list__item'><Link to='/contact'>Contact</Link></li>
+                    </ul>
                 </div>
                 <div className="lower">
                     <div className="card address">
-                        <h1 className='title'>Designo Central Office</h1>
-                        <p>3886 Wellington Street<br/>Toronto, Ontario M9C 3J5</p>
+                        <h1 className='card__title'>Designo Central Office</h1>
+                        <p className='card__content'>3886 Wellington Street<br/>Toronto, Ontario M9C 3J5</p>
                     </div>
                     <div className="card contact">
-                        <h1 className='title'>Contact Us &#40;Central Office&#41;</h1>
-                        <p>P : +1 253-863-8967<br/>M : contact@designo.co</p>
+                        <h1 className='card__title'>Contact Us &#40;Central Office&#41;</h1>
+                        <p className='card__content'>P : +1 253-863-8967<br/>M : contact@designo.co</p>
                     </div>
-                    <div className="socials">
+                    <div className='icon__container'>
                         <svg className='icon' width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z" fill-rule="nonzero"/></svg>
                         <svg className='icon' width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.441 16.892c-2.102.144-6.784.144-8.883 0C5.282 16.736 5.017 15.622 5 12c.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0C18.718 7.264 18.982 8.378 19 12c-.018 3.629-.285 4.736-2.559 4.892zM10 9.658l4.917 2.338L10 14.342V9.658z" fill-rule="nonzero"/></svg>
                         <svg className='icon' width="24" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M24 2.557a9.83 9.83 0 01-2.828.775A4.932 4.932 0 0023.337.608a9.864 9.864 0 01-3.127 1.195A4.916 4.916 0 0016.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 011.671 1.149a4.93 4.93 0 001.523 6.574 4.903 4.903 0 01-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.224.084 4.928 4.928 0 004.6 3.419A9.9 9.9 0 010 17.54a13.94 13.94 0 007.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0024 2.557z" fill-rule="nonzero"/></svg>
@@ -35,9 +35,79 @@ function Footer() {
                         <svg className='icon' width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill-rule="nonzero"/></svg>
                     </div>
                 </div>
-            </div>
-        </div>
+            </Wrapper>
+        </>
      );
 }
+
+const Wrapper = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: ${props => props.theme.colors.black};
+    color: white;
+    text-align: center;
+    padding: 15em 0 4em 0;
+
+    .upper {
+        width: 90%;
+
+        .logo__container {
+            border-bottom: 1px solid ${props => props.theme.colors.gray};
+            margin-bottom: 1em;
+            padding-bottom: 1em;
+
+            .logo {
+                width: 12em;
+            }
+        }
+
+        .list {
+            margin-bottom: 1.5em;
+
+                &__item {
+                text-transform: uppercase;
+                font-size: 0.9rem;
+                letter-spacing: 0.1em;
+                line-height: 3;
+
+                    &:hover {
+                    text-decoration: underline;
+                    }
+            }
+        }
+    }
+
+    .lower {
+
+        .card {
+            margin-bottom: 2.5em;
+            color: ${props => props.theme.colors.lightGray};
+
+            &__title {
+                font-size: 1rem;
+            }
+        }
+
+        .icon__container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+            fill: ${props => props.theme.colors.orange};
+
+            .icon {
+                cursor: pointer;
+
+                &:hover {
+                    fill: ${props => props.theme.colors.orangeLight};
+                    transition: 100ms
+                }
+            }
+        }
+    }
+`
 
 export default Footer;

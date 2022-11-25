@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 function OurCompany() {
     return ( 
         <h2>Our Company</h2>
