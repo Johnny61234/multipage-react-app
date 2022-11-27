@@ -1,16 +1,14 @@
 import { Link } from 'react-router-dom';
-import GetInTouch from './GetInTouch';
 import logo from '../assets/logos/logo-light.webp';
 import styled from 'styled-components';
 
 function Footer() {
     return ( 
-        <>
-            <GetInTouch />
-            <Wrapper>
+        <Wrapper>
+            <div className="container">
                 <div className='upper'>
                     <div className="logo__container">
-                        <img className='logo' src={logo}/>
+                        <Link to='/'><img className='logo' src={logo}/></Link>
                     </div>
                     <ul className='list'>
                         <li className='list__item'><Link to='/ourcompany'>Our Company</Link></li>
@@ -35,21 +33,24 @@ function Footer() {
                         <svg className='icon' width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill-rule="nonzero"/></svg>
                     </div>
                 </div>
-            </Wrapper>
-        </>
+            </div>
+        </Wrapper>
      );
 }
 
 const Wrapper = styled.div`
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     background-color: ${props => props.theme.colors.black};
-    color: white;
-    text-align: center;
-    padding: 15em 0 4em 0;
+
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        padding: 15em 0 4em 0;
+    }
 
     .upper {
         width: 90%;
@@ -106,6 +107,58 @@ const Wrapper = styled.div`
                     transition: 100ms
                 }
             }
+        }
+    }
+    @media screen and (min-width: 630px) {
+
+        .upper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid ${props => props.theme.colors.gray};
+            margin-bottom: 2em;
+            padding-bottom: 2em;
+
+            .logo__container {
+                margin: 0;
+                padding: 0;
+                border: unset;
+                display: flex;
+
+                .logo {
+                    cursor: pointer;
+                }
+            }
+
+            .list {
+                display: flex;
+                gap: 2em;
+                margin: 0;
+                
+                &__item {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+
+        .lower {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 90%;
+
+            .card {
+                margin: 0;
+                text-align: left;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1000px){
+
+        .container {
+            width: 1000px;
+            margin: auto
         }
     }
 `

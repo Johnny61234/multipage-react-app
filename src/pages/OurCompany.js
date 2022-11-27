@@ -1,8 +1,12 @@
 import styled from 'styled-components';
+import GetInTouch from '../components/GetInTouch';
 
 function OurCompany() {
-    return ( 
-        <h2>Our Company</h2>
+    return (
+        <>
+            <h1>test</h1>
+            <GetInTouch />
+        </>
      );
 }
 

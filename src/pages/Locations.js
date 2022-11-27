@@ -1,8 +1,11 @@
 import styled from 'styled-components';
+import GetInTouch from '../components/GetInTouch';
 
 function Locations() {
     return ( 
-        <h2>Locations</h2>
+        <>
+            <GetInTouch />
+        </>
      );
 }
 

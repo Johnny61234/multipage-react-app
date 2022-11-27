@@ -1,12 +1,14 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import bgPattern from '../assets/design/bg-pattern-intro-app.svg';
+import { Button } from './Button';
 
-function GetInTouch() {
+function GetInTouch(props) {
     return ( 
         <Wrapper>
             <h1 className='title'>Let's talk about your project</h1>
             <p className='paragraph'>Ready to take it to the next level? Contact us today and find out how our enterprise can help your business grow.</p>
-            <button className='button'>Get In Touch</button>
+            <Link to='/contact'><Button>Get In Touch</Button></Link>
         </Wrapper>
      );
 }
@@ -42,27 +44,21 @@ const Wrapper = styled.div`
         line-height: 1.5;
     }
 
-    .button {
-        align-self: center;
-        border-radius: 0.5em;
-        background-color: ${props => props.theme.colors.white};
-        color: ${props => props.theme.colors.black};
-        text-transform: uppercase;
-        font-size: 0.9rem;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-        padding: 1.25em 1.5em;
-        border: none;
-        cursor: pointer;
-        transition: 100ms;
+    @media screen and (min-width: 630px) {
+        transform: translateY(25%);
+        align-items: center;
 
-        &:hover {
-            background-color: ${props => props.theme.colors.orangeLight};
-            color: ${props => props.theme.colors.white};
-            transition: 100ms;
+        .title {
+            width: 10em;
+        }
+        .paragraph {
+            width: 30em;
         }
     }
 
+    @media screen and (min-width: 1000px) {
+        width: 1000px;
+    }
 `
 
 export default GetInTouch;
